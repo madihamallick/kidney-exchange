@@ -1,5 +1,5 @@
 <?php
-include_once("../templates/db-connect.php");
+include_once("../db-connect.php");
 include_once("../include/functions.inc.php");
 
 $pArray = getPatients($conn);
@@ -11,7 +11,8 @@ $dArray = getDonors($conn);
 
   <link rel="stylesheet" href="../css/button-style.css">
   <link rel="stylesheet" href="../css/blueContentTable.css">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/backToTop.css">
   <style>
     /* --------------------Background--------------------------- */
 
@@ -37,26 +38,46 @@ $dArray = getDonors($conn);
       font-size: 30px;
       margin: 50px auto 10px auto;
     }
-    @media screen and (max-width: 992px) {
-    .navbar , .content-table ,#footer
-    {
-      width: 235vw !important; 
+
+    .table-wrapper{
+      margin: 4%;
     }
+    @media screen and (max-width: 992px) {
+
     .content-table td, .content-table th
     {
-      padding:6px;
+      padding:0;
+    }
+
+    .table-wrapper{
+      margin: 4%;
+      border: 2px solid
     }
     
     }
-
+    
+    /* overwriting some css of back to top */
+#button {
+  width: 42px;
+  height: 42px;
+  bottom: 10px;
+  right: -20px;
+}
+#button::after {
+  font-size: 1.5em;
+  line-height: 40px;
+  color: #fff;
+}
   </style>
-
   <div class="nav-container">
     <?php include("../templates/navBar.php") ?>
   </div>
-
+<!-- Back to top button -->
+<a id="button" style="text-decoration:none"></a>
   <h2 class="heading">Patients</h2>
-  <table class="content-table" id="patientTable">
+  <div class="table-wrapper table-responsive">
+
+  <table class="content-table table-condensed" id="patientTable">
     <tr>
       <th>ID</th>
       <th>Name</th>
@@ -103,7 +124,11 @@ $dArray = getDonors($conn);
     <?php endforeach; ?>
   </table>
 
+  </div>
+  
+
   <h2 class="heading">Donors</h2>
+  <div class="table-wrapper table-responsive">
   <table class="content-table" id="donorTable">
     <tr>
       <th>ID</th>
@@ -140,5 +165,6 @@ $dArray = getDonors($conn);
     <?php endforeach; ?>
 
   </table>
-
+  </div>
+  <script src="../js/backToTop.js"></script>
 <?php include_once("../include/footer.inc.php") ?>

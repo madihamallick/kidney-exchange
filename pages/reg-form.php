@@ -427,7 +427,7 @@
               <select name="r_d-center" class="requiredField single">
                 <?php
 
-require_once "../templates/db-connect.php";
+require_once "../db-connect.php";
 require_once "../include/functions.inc.php";
 
 if ($_SESSION['userType'] === "Transplant coordinator") {
@@ -796,8 +796,8 @@ if ($_SESSION['userType'] === "Transplant coordinator") {
       </div>
 
       <div id='btn-block'>
-        <button type="button" id='prev-btn'>Previous</button>
-        <button type="button" id='next-btn'>Next</button>
+        <button type="button" style="width: auto;" id='prev-btn'>Previous</button>
+        <button type="button" style="width: auto;" id='next-btn'>Next</button>
       </div>
 
     </form>

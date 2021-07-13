@@ -1,12 +1,17 @@
 <style>
 body{
-  background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701389136.jpg");
+ background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701389136.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-} 
+}
+
 
 form {
   background: rgb(0, 0, 0, 0.5);
+  border-radius: 25px;
+  width: 80%;
+    height: 88%;
+    backdrop-filter:blur(12px);
 }
 
 input{
@@ -17,25 +22,31 @@ input{
 	box-sizing: border-box;
 	outline: none;
 	font-size: 150%;
+  border-radius: 50px;
 }
 
 .form-elements button {
   /* background-color: #b30d4b; */
   background-color: #ad0c4d;
-  color: white;
-  padding: 16px 20px;
-  margin: 15px 0;
-	cursor: pointer;
-	border: none;
-	width: 100%;
-	font-size: 150%;
-  outline: none;
+    color: white;
+    margin: 15px 0;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-size: 26px;
+    outline: none;
+    height: 10%;
+    border-radius: 30px;
+    background-size: 200% 100%;
+    transition: background-position 0.5s, color 0.5s;
+    background-image: linear-gradient(to right, #dc3545 50%, #ad0c4d 50%);
 }
 
 .form-elements button:hover {
   opacity: 0.8;
-}
-
+  background-position: right bottom;
+  color: #fff;
+  }
 img.avatar {
 	width: 22%;
 	opacity: 0.8;
@@ -86,7 +97,23 @@ form a{
   #showpass
   {
     width:55vw;
-  } 
+  }
+}
+#showpass span{
+  font-size: 18px;
+  margin-left: 4px;
+}
+#showpass{
+  margin-left: -12px;
+}
+p{
+  color: white;
+  text-align: center;
+}
+.field-icon{
+position: absolute;
+margin-left: -30px;
+margin-top: 30px;
 }
 </style>
 
@@ -95,7 +122,7 @@ form a{
 	<div class="nav-container">
       <?php include("../templates/navBar.php") ?>
   </div>
-<div class="container col-lg-4 co-sm-11 px-1">
+<div class="container col-lg-4 co-sm-11 px-1 d-flex justify-content-center align-items-center" style="height: 90%;">
 	<form action="../include/login.inc.php" class="py-5 px-3" method="POST">
 
 			<!-- <div class="imgcontainer">
@@ -108,7 +135,7 @@ form a{
 
 			<div class="form-elements">
           <img src="../images/red-avatar.png" alt="Avatar" class="avatar">
-          <?php 
+          <?php
             if(isset($_GET["error"])) {
               if ($_GET["error"] == "emptyInputLogin") {
                 echo "<p id='failed'>Please fill all the fields</p>";
@@ -118,28 +145,30 @@ form a{
               }
               else if ($_GET["error"] == "invalidPassword") {
                 echo "<p id='failed'>Invalid password</p>";
-              }            
+              }
             }
           ?>
 			</div>
 
 			<div class="form-elements">
+
 				<input type="text" class="my-2" name="uid" placeholder="Username/Email">
-				<input type="password" class="my-2" name="pswd" id="pswd" placeholder="Password">
+				<input type="password" class="my-2" name="pswd" id="pswd" placeholder="Password"><i class="fa fa-fw fa-eye-slash field-icon toggle-password1" id="togglePassword"  onclick="showPassword(pswd,1);" ></i>
         <div id="showpass">
             <input type="checkbox" id="box" onclick="box1()">
-            <span id="notice">show password</span>
+            <span id="notice">Show Password</span>
         </div>
+        <a href="#" style="float: right;">Forgot Password?</a>
 				<button type="submit" name="submit" value="submit">Login</button>
       </div>
+      <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
 
-      <a href="#">Forgot Password?</a>
 
 
-			
+
+
 	</form>
   </div>
+  <!--js-->
   <script src="../js/showpassword.js"></script>
   <?php include("../include/footer.inc.php") ?>
-
-

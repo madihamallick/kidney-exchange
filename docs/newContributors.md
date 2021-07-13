@@ -1,17 +1,14 @@
 <h1 align="center">Hello Peeps 👋</h1>
 <h2 align="center">Welcome to the <a href="https://github.com/siv2r/kidney-exchange">kidney-exchange</a> Repo 🎉</h2>
-
 <h2 align="center">Here, is the Complete Guide to Contribute to this Repo.</h2>
 
 <h3>📌⚠️Git Essentials⚠️📌</h3>
  
 If You don't have Git already installed on your System ,You can follow this [Installation_Guide](https://github.com/git-guides/install-git).
 
-
-
 <br>
 
- 1.  Firstly, Join our [Discord](https://discord.com/invite/d7j63WZV82) Server, Introduce yourself there, Interact with Others as 
+ 1.  Firstly, Join our [Discord](https://discord.gg/uH35zjW5cN) Server, Introduce yourself there, Interact with Others as 
       > **Open Source is more about Collaboration.** 
 
     
@@ -20,7 +17,6 @@ If You don't have Git already installed on your System ,You can follow this [Ins
  3. If none of the issues match your interest or things are a bit overwhelming, you can ask for guidance in the discord group.
    
  4.  So to start Contributing to our Project you can solve existing issues or if you have found any bugs or want to add a new feature to Project you can create New Issue, that's purely your choice.
-
 
 
   ![](../images/Issues.png)
